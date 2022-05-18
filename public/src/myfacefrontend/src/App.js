@@ -1,24 +1,28 @@
 
 import './App.css';
-import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react'
+import UserDetail from './UserDetail';
+import PostDetail from './PostDetail';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
-  const [posts, setPosts] = useState(null);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/posts").then(response => response.json()).then(data => setPosts(data.results));
-  }, [])
-
-  if(!posts) {
-    return <div> Waiting for data </div>
-  }
+  
   return (
-   <div> {posts.map(post => <div className='post-message'>
-      {post.message}
-      <img className = "post-image" src={post.imageUrl} />
-      </div>)}
-      </div> // or post.id --- can log different info to the front end
+    <BrowserRouter>
+    <div> 
+     <Routes>
+       <Route path=''> 
+        <h1> Welcome </h1>
+        <link to="/users" />
+        <link to= "/posts" />
+       </Route>
+       <Route path='/users'> <UserDetail /> </Route>
+       <Route path='/posts'> <PostDetail /> </Route>
+     </Routes>
+    </div> 
+    </BrowserRouter>
   );
+
 }
 
 export default App;
