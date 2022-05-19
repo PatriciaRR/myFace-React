@@ -17,8 +17,8 @@ function UserDetail() {
   return (
     <div className='container'> 
       {users.map(user => <div className = 'user-name'>
-        {user.name}
-        {user.email}
+        {user.name} <br />
+        {/* {user.email} */}
         {<img className="user-image" alt="user" src={user.profileImageUrl}/>}
     </div>)}
   </div>

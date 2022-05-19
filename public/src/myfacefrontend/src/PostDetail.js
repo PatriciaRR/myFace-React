@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./App.scss"
+import UserDetail from './UserDetail';
 
 function PostDetail() {
     const [posts, setPosts] = useState(null);
@@ -14,8 +15,11 @@ function PostDetail() {
     return (
      <div className="container"> 
        {posts.map(post => <div className='post-message'>
-        {post.message}
-        {<img className = "post-image" alt= "post" src={post.imageUrl} />}
+        {post.message} <br />
+        {<img className = "post-image" alt= "post" src={post.imageUrl} />} 
+        {<button type="Like"> Like </button>}
+        {<button type="Dislike"> Dislike </button>}
+       
         </div>)}
       </div> 
     );
