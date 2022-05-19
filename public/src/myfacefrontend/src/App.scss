@@ -36,14 +36,21 @@
     transform: rotate(360deg);
   }
 }
-
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
 .post-message{
   width: 20%;
   border: black 1px solid;
+  background-color: pink;
+ 
 }
 
 .post-image{
 width: 20vw;
+padding:20px;
+background-color: aliceblue;
 }
 
 .user-name {
@@ -52,4 +59,6 @@ width: 20%;
 
 .user-image {
 width: 20pw;
+background-color: aliceblue;
+
 }

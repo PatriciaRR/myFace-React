@@ -1,9 +1,8 @@
-
-import './App.css';
-// import React, { useState, useEffect } from 'react'
+import React from 'react';
+import './App.scss';
 import UserDetail from './UserDetail';
 import PostDetail from './PostDetail';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link }  from 'react-router-dom'
 
 function App() {
   
@@ -11,18 +10,17 @@ function App() {
     <BrowserRouter>
     <div> 
      <Routes>
-       <Route path=''> 
-        <h1> Welcome </h1>
-        <link to="/users" />
-        <link to= "/posts" />
+       <Route path='' element={<nav>
+          <Link to="/users"> Users </Link> | {" "}
+          <Link to= "/posts" > Posts </Link> 
+        </nav>}>
        </Route>
-       <Route path='/users'> <UserDetail /> </Route>
-       <Route path='/posts'> <PostDetail /> </Route>
+       <Route path='/users' element={<UserDetail />}/>
+       <Route path='/posts' element={<PostDetail />}/>
      </Routes>
     </div> 
     </BrowserRouter>
   );
-
 }
 
 export default App;

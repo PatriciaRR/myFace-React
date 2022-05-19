@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import "./App.scss"
 
 function PostDetail() {
     const [posts, setPosts] = useState(null);
@@ -11,10 +12,10 @@ function PostDetail() {
       return <div> Waiting for data </div>
     }
     return (
-     <div> 
+     <div className="container"> 
        {posts.map(post => <div className='post-message'>
         {post.message}
-        {/* <img className = "post-image" alt= "post" src={post.imageUrl} /> */}
+        {<img className = "post-image" alt= "post" src={post.imageUrl} />}
         </div>)}
       </div> 
     );
